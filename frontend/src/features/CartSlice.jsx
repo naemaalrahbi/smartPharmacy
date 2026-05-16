@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const addToCart = createAsyncThunk("cart/addToCart", async (data) => {
     try {
-        const res = await axios.post("http://localhost:5001/cart/add", data);
+        const res = await axios.post("https://smartpharmacy-lysm.onrender.com/cart/add", data);
         return res.data;
     } catch (err) {
         console.log(err);
