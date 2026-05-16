@@ -8,7 +8,10 @@ const savedUser = (() => {
 
 export const getUser = createAsyncThunk("users/getUser", async (udata) => {
     try {
-        const response = await axios.post("http://localhost:5001/login", udata);
+     const response = await axios.post(
+  "https://smartpharmacy-lysm.onrender.com/login",
+  udata
+);
         return response.data;
     } catch (error) {
         console.log(error);
