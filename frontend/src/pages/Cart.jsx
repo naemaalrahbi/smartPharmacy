@@ -25,12 +25,12 @@ function Cart() {
 
     const updateQuantity = async (productId, newQty) => {
         if (newQty <= 0) return;
-        await axios.post("http://localhost:5001/cart/update", { userId: user._id, productId, quantity: newQty });
+        await axios.post("https://smartpharmacy-lysm.onrender.com/cart/update", { userId: user._id, productId, quantity: newQty });
         dispatch(getCart(user._id));
     };
 
     const removeItem = async (productId) => {
-        await axios.delete(`http://localhost:5001/cart/remove/${user._id}/${productId}`);
+        await axios.delete(`https://smartpharmacy-lysm.onrender.com/cart/remove/${user._id}/${productId}`);
         dispatch(getCart(user._id));
     };
 
