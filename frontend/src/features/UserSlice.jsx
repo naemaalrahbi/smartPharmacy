@@ -8,10 +8,10 @@ const savedUser = (() => {
 
 export const getUser = createAsyncThunk("users/getUser", async (udata) => {
     try {
-     const response = await axios.post(
-  "https://smartpharmacy-lysm.onrender.com/login",
-  udata
-);
+        const response = await axios.post(
+            "https://smartpharmacy-lysm.onrender.com/login",
+            udata
+        );
         return response.data;
     } catch (error) {
         console.log(error);
@@ -20,7 +20,10 @@ export const getUser = createAsyncThunk("users/getUser", async (udata) => {
 
 export const getAdmin = createAsyncThunk("users/getAdmin", async (udata) => {
     try {
-        const response = await axios.post("http://localhost:5001/admin/login", udata);
+        const response = await axios.post(
+            "https://smartpharmacy-lysm.onrender.com/admin/login",
+            udata
+        );
         return response.data;
     } catch (error) {
         console.log(error);
@@ -28,7 +31,10 @@ export const getAdmin = createAsyncThunk("users/getAdmin", async (udata) => {
 });
 
 export const addUser = createAsyncThunk("user/addUser", async (data) => {
-    const response = await axios.post("http://localhost:5001/register", data);
+    const response = await axios.post(
+        "https://smartpharmacy-lysm.onrender.com/register",
+        data
+    );
     return response.data;
 });
 
