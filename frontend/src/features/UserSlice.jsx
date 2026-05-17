@@ -14,7 +14,7 @@ export const getUser = createAsyncThunk(
     async (udata) => {
         try {
             const response = await axios.post(
-                "https://smartpharmacy-lysm.onrender.com/login",
+                "http://localhost:5001/login",
                 udata
             );
             return response.data;
@@ -29,7 +29,7 @@ export const getAdmin = createAsyncThunk(
     async (udata) => {
         try {
             const response = await axios.post(
-                "https://smartpharmacy-lysm.onrender.com/admin/login",
+                "http://localhost:5001/admin/login",
                 udata
             );
             return response.data;
@@ -43,7 +43,7 @@ export const addUser = createAsyncThunk(
     "user/addUser",
     async (data) => {
         const response = await axios.post(
-            "https://smartpharmacy-lysm.onrender.com/register",
+            "http://localhost:5001/register",
             data
         );
         return response.data;
