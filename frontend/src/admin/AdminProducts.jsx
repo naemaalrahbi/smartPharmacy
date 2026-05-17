@@ -15,9 +15,12 @@ const [modal, setModal] = useState(false);
 const toggle = () => setModal(!modal);
 
 const loadProducts = async () => {
-   const res = await axios.get(
-    "https://smartpharmacy-lysm.onrender.com/products"
-);
+    const res = await axios.get(
+        "https://smartpharmacy-lysm.onrender.com/products"
+    );
+
+    setProducts(res.data);
+};
 
 useEffect(() => { loadProducts(); }, []);
 
