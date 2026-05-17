@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const getProducts = createAsyncThunk("products/getProducts", async () => {
     try {
-        const response = await axios.get("https://smartpharmacy-lysm.onrender.com");
+        const response = await axios.get("https://smartpharmacy-lysm.onrender.com/products");
         return response.data;
     } catch (error) {
         console.log(error);
