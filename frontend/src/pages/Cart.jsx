@@ -53,10 +53,21 @@ function Cart() {
                         ) : items.map((item) => (
                             <Card key={item.productId?._id} style={{ marginBottom: "20px", borderRadius: "12px", background: "white", padding: "12px" }}>
                                 <Row>
-                                    <Col md="3">
-                                        <img src={item.productId?.image || "https://via.placeholder.com/150?text=💊"}
-                                            style={{ width: "100%", height: "130px", objectFit: "cover", borderRadius: "10px" }} />
-                                    </Col>
+                                  <Col md="3">
+    <img
+        src={
+            item.productId?.image ||
+            item.image ||
+            "https://via.placeholder.com/150?text=💊"
+        }
+        style={{
+            width: "100%",
+            height: "130px",
+            objectFit: "cover",
+            borderRadius: "10px"
+        }}
+    />
+</Col>
                                     <Col md="6">
                                         <CardBody>
                                             <h5 style={{ fontWeight: "bold" }}>{item.productId?.name}</h5>
