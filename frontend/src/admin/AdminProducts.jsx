@@ -15,9 +15,9 @@ const [modal, setModal] = useState(false);
 const toggle = () => setModal(!modal);
 
 const loadProducts = async () => {
-    const res = await axios.get("http://localhost:5001/products");
-    setProducts(res.data);
-};
+   const res = await axios.get(
+    "https://smartpharmacy-lysm.onrender.com/products"
+);
 
 useEffect(() => { loadProducts(); }, []);
 
@@ -34,7 +34,7 @@ const validateAdd = () => {
 
 const addProduct = async () => {
     if (!validateAdd()) return;
-    const res = await axios.post("http://localhost:5001/product/add", {
+    const res = await axios.post("https://smartpharmacy-lysm.onrender.com/product/add", {
         name, manufacturer, price: Number(price), image, category,
         stock: Number(stock) || 0, requiresPrescription, description
     });
@@ -49,7 +49,7 @@ const addProduct = async () => {
 
 const deleteProduct = async (id) => {
     if (window.confirm("Are you sure you want to delete this product?")) {
-        await axios.delete(`http://localhost:5001/product/delete/${id}`);
+        await axios.delete(`https://smartpharmacy-lysm.onrender.com/product/delete/${id}`);
         loadProducts();
     }
 };
@@ -73,7 +73,7 @@ const validateEdit = () => {
 
 const updateProduct = async () => {
     if (!validateEdit()) return;
-    const res = await axios.put(`http://localhost:5001/product/update/${editId}`, editData);
+    const res = await axios.put(`https://smartpharmacy-lysm.onrender.com/product/update/${editId}`, editData);
     if (res.data.message === "Updated") { toggle(); loadProducts(); }
     else alert(res.data.message);
 };
