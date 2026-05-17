@@ -12,7 +12,9 @@ export const addToCart = createAsyncThunk("cart/addToCart", async (data) => {
 
 export const getCart = createAsyncThunk("cart/getCart", async (userId) => {
     try {
-        const res = await axios.get(`http://localhost:5001/cart/${userId}`);
+        const res = await axios.get(
+    `https://smartpharmacy-lysm.onrender.com/cart/${userId}`
+);
         return res.data;
     } catch (err) {
         console.log(err);
