@@ -41,7 +41,7 @@ function Checkout() {
             orderStatus: "pending",
         };
 
-        const res = await axios.post("http://localhost:5001/order/create", orderData);
+        const res = await axios.post("https://smartpharmacy-lysm.onrender.com/order/create", orderData);
         const fullOrder = {
             ...res.data.order,
             items: items.map((i) => ({ productId: i.productId, quantity: i.quantity })),
