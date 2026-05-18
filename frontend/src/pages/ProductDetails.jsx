@@ -24,7 +24,7 @@ function ProductDetails() {
     useEffect(() => { localStorage.setItem(userKey, JSON.stringify(favorites)); }, [favorites]);
 
     const loadProduct = async () => {
-        const res = await axios.get("http://localhost:5001/products");
+        const res = await axios.get("https://smartpharmacy-lysm.onrender.com/products");
         const found = res.data.find((p) => p._id === id);
         setProduct(found);
         setAllProducts(res.data);
