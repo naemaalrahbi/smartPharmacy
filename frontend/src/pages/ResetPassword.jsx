@@ -52,7 +52,7 @@ function ResetPassword() {
                 setServerMsg("Session expired. Please try again.");
                 return;
             }
-            const res = await axios.post("http://localhost:5001/reset-password", {
+            const res = await axios.post("https://smartpharmacy-lysm.onrender.com/reset-password", {
                 email,
                 newPassword: values.password
             });
