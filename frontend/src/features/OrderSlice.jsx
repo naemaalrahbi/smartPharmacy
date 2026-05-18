@@ -7,7 +7,7 @@ export const createOrder = createAsyncThunk("orders/create", async (data) => {
 });
 
 export const getOrders = createAsyncThunk("orders/getAll", async (userId) => {
-    const res = await axios.get(`http://localhost:5001/orders/${userId}`);
+    const res = await axios.get(`https://smartpharmacy-lysm.onrender.com/orders/${userId}`);
     return res.data;
 });
 
