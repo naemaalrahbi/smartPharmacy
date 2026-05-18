@@ -42,7 +42,7 @@ function Payment() {
         if (!validateFields()) return;
 
         try {
-            await axios.delete(`http://localhost:5001/cart/removeall/${user._id}`);
+            await axios.delete(`https://smartpharmacy-lysm.onrender.com/cart/removeall/${user._id}`);
             const populated = await axios.get(`http://localhost:5001/order/details/${order._id}`);
             navigate("/payment-success", { state: { order: populated.data } });
         } catch (err) {
