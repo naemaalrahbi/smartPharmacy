@@ -21,7 +21,7 @@ function MyList() {
     }, [userKey]);
 
     useEffect(() => {
-        axios.get("http://localhost:5001/products").then(res => setProducts(res.data));
+        axios.get("https://smartpharmacy-lysm.onrender.com/products").then(res => setProducts(res.data));
     }, []);
 
     const favProducts = products.filter(p => favorites.includes(p._id));
