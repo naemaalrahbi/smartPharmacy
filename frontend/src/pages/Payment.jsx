@@ -43,7 +43,7 @@ function Payment() {
 
         try {
             await axios.delete(`https://smartpharmacy-lysm.onrender.com/cart/removeall/${user._id}`);
-            const populated = await axios.get(`http://localhost:5001/order/details/${order._id}`);
+            const populated = await axios.get(`https://smartpharmacy-lysm.onrender.com/order/details/${order._id}`);
             navigate("/payment-success", { state: { order: populated.data } });
         } catch (err) {
             console.log(err);
@@ -61,10 +61,17 @@ function Payment() {
                         <Card style={{ padding: "20px", borderRadius: "16px" }}>
                             <h4>Payment Method</h4>
                             <div style={{ marginBottom: '15px' }}>
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/100px-Visa_Inc._logo.svg.png"
-                                    style={{ height: '30px', marginRight: '10px' }} alt="Visa" />
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/30px-Apple_logo_black.svg.png"
-                                    style={{ height: '25px' }} alt="Apple Pay" />
+                              <img
+    src="https://cdn-icons-png.flaticon.com/512/196/196578.png"
+    style={{ height: '30px', marginRight: '10px' }}
+    alt="Visa"
+/>
+
+<img
+    src="https://cdn-icons-png.flaticon.com/512/0/747.png"
+    style={{ height: '25px' }}
+    alt="Apple Pay"
+/>
                             </div>
                             <FormGroup check>
                                 <Label check><Input type="radio" name="payment" checked={method === "cash"} onChange={() => setMethod("cash")} /> Cash on Delivery</Label>
