@@ -23,7 +23,7 @@ function ForgotPassword() {
 
     const sendLink = async () => {
         try {
-            const res = await axios.post("http://localhost:5001/forgot-password", { email });
+            const res = await axios.post("https://smartpharmacy-lysm.onrender.com/forgot-password", { email });
             if (res.data.message === "Email not found") {
                 setError("Email not found");
             } else {
