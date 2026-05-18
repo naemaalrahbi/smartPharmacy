@@ -15,7 +15,7 @@ function OrderDetails() {
 
     const loadOrder = async () => {
         try {
-            const res = await axios.get(`http://localhost:5001/order/details/${id}`);
+            const res = await axios.get(`https://smartpharmacy-lysm.onrender.com/order/details/${id}`);
             setOrder(res.data);
         } catch (err) { console.log(err); }
     };
