@@ -16,14 +16,14 @@ function MyOrders() {
 
     const loadOrders = async () => {
         try {
-            const res = await axios.get(`http://localhost:5001/orders/${user._id}`);
+            const res = await axios.get(`https://smartpharmacy-lysm.onrender.com/orders/${user._id}`);
             setOrders(res.data);
         } catch (err) { console.log(err); }
     };
 
     const cancelOrder = async (id) => {
         try {
-            await axios.post(`http://localhost:5001/order/cancel/${id}`);
+            await axios.post(`https://smartpharmacy-lysm.onrender.com/order/cancel/${id}`);
             navigate("/order-cancelled", { state: { orderId: id } });
         } catch (err) { console.log(err); }
     };
