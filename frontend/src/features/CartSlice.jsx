@@ -37,7 +37,7 @@ export const CartSlice = createSlice({
         builder
             .addCase(addToCart.pending, (state) => { state.isLoading = true; })
             .addCase(addToCart.fulfilled, (state, action) => {
-                state.isLoading = false;
+                state.isLoading = true;
                 state.isSuccess = true;
                 state.message = action.payload?.message;
                 state.cart = action.payload?.cart;
@@ -45,7 +45,7 @@ export const CartSlice = createSlice({
             .addCase(addToCart.rejected, (state) => { state.isLoading = false; state.isError = true; })
             .addCase(getCart.pending, (state) => { state.isLoading = true; })
             .addCase(getCart.fulfilled, (state, action) => {
-                state.isLoading = false;
+                state.isLoading = true;
                 state.isSuccess = true;
                 state.cart = action.payload;
             })
